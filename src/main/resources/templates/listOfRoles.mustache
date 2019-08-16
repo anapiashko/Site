@@ -1,0 +1,23 @@
+
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div><h3>Список ролей</h3></div>
+    <form action="adduser">
+        <button type="submit">Добавить</button>
+    </form>
+    <form action="#">
+        <button type="submit">Обновить</button>
+    </form>
+{{#roles}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{position}}</span>
+        <i>{{countRole}}</i>
+    </div>
+{{/roles}}
+
+</body>
+</html>
