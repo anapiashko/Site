@@ -1,4 +1,4 @@
-package com.anapiashko.site;
+package com.anapiashko.site.jdbc;
 
 import java.sql.*;
 
@@ -6,10 +6,12 @@ public class DeleteRowDB
 {
     String position = new String();
     String count = new String();
+    String id;
 
-    public DeleteRowDB(String position, Integer count) throws SQLException, ClassNotFoundException {
+    public DeleteRowDB(Integer id) throws SQLException, ClassNotFoundException {
         this.position = position;
         this.count = count.toString();
+        this.id = id.toString();
         testDatabase();
     }
 
@@ -24,7 +26,7 @@ public class DeleteRowDB
 
     private void select(Connection con) throws SQLException {
         try (PreparedStatement stmt = con.prepareStatement(
-                "DELETE FROM position WHERE position = '"+position+"' AND count = '"+count+"'")) {
+                "DELETE FROM position WHERE id = '"+id+"' ")) {
 
             boolean test = stmt.execute();
 
