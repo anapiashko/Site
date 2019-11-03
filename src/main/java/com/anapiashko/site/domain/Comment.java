@@ -12,16 +12,26 @@ import java.time.LocalDateTime;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @JsonView(Views.Id.class)
+    //@JsonView(Views.Id.class)
     private Integer id;
 
-    @JsonView(Views.FullComment.class)
+    //@JsonView(Views.FullComment.class)
     private String text;
 
 
-    @JsonView(Views.FullComment.class)
+    //@JsonView(Views.FullComment.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime time;
+//
+//    private Author author;
+//
+//    public Author getAuthor() {
+//        return author;
+//    }
+//
+//    public void setAuthor(Author author) {
+//        this.author = author;
+//    }
 
     public String getText() {
         return text;

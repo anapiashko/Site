@@ -24,7 +24,7 @@ public class CommentController {
     }
 
     @PostMapping
-    public Comment create( Comment comment){
+    public Comment create(@RequestBody Comment comment){
         comment.setCreationDate(LocalDateTime.now());
         return commentRepo.save(comment);
     }

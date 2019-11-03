@@ -22,7 +22,8 @@ Vue.component('input-form', {
                 result.json().then(data => {
                     this.comments.push(data);
                 })
-            )
+            );
+            this.text = '';
         }
 
     }
